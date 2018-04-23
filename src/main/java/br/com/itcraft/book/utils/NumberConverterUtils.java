@@ -11,4 +11,5 @@ public class NumberConverterUtils {
 	    double valorFormatado = numFormat.parse(valor).doubleValue();
 	    return valorFormatado;
 	}
+
 }

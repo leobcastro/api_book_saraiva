@@ -26,6 +26,7 @@ public class BookResource {
 	
 	private static final Logger logger = Logger.getGlobal();
 	
+	
 	@Autowired
 	private IBookService bookService;
 
@@ -45,8 +46,8 @@ public class BookResource {
 		return new ResponseEntity<Book>(book,HttpStatus.OK);
 	}
 	
-	@RequestMapping(value="{sku}",method = RequestMethod.POST)
-	private ResponseEntity<Void> insert(@PathVariable(value="sku") long sku){		
+	@RequestMapping(method = RequestMethod.POST)
+	private ResponseEntity<Void> insert(@PathParam("sku") Long sku){		
 		try {
 			bookService.insert(sku);
 		} catch (BookServiceException e) {
